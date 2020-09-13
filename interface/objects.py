@@ -11,8 +11,6 @@ import basics
 
 log_platform = None # name of host platform, overwritten by __init__
 
-web_root = None # path to system webroot, overwritten by __init__
-
 notification_allow = None # boolean as a signal to not send email notifications, overwritten by __init__
 
 notification_host_email = None # address notifications are sent from, overwritten by __init__

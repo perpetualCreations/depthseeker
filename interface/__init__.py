@@ -22,7 +22,6 @@ elif platform_raw in ["FreeBSD"]:
 else:
     objects.log_platform = "/var/log/apache2/access.log"
 pass
-objects.web_root = config_parser_read["WEBROOT"]["root"]
 
 # SMTP mailing initialization
 objects.notification_smtp_service = objects.smtplib.SMTP('smtp.gmail.com', 587)
@@ -43,15 +42,4 @@ if not objects.notification_mailing_list:
     objects.notification_allow = False
 else:
     objects.notification_allow = True
-pass
-
-# robots.txt check, otherwise crawler blocking may not work
-try:
-    with open(objects.web_root + "robots.txt") as robot_test:
-        pass
-    pass
-except FileNotFoundError:
-    with open(objects.web_root + "robots.txt", "w") as robot_create:
-        robot_create.write("User-agent: *\nDisallow: ")
-    pass
 pass

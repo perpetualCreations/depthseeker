@@ -1,6 +1,6 @@
 ####### DO NOT DELETE READ ME #######
 This is the mail-to.list configuration file.
-Please add email addresses that are to be notified in case of unexpected behavior and/or malicious activity.
+Please add email addresses to receive daily reports.
 Put each address on a new line, and make sure there is one address per line and only one address per line.
 This also means no empty lines.
 If left empty, no notifications will be dispatched, and instead will only be logged.

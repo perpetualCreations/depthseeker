@@ -23,6 +23,17 @@ else:
     objects.log_platform = "/var/log/apache2/access.log"
 pass
 
+config_parser_read.read("api.cfg")
+objects.api_key = config_parser_read["API"]["key"]
+
+if objects.api_key == "":
+    objects.api_allow = False
+else:
+    objects.api_allow = True
+    # AbuseIPDB API initiation
+    objects.api_interface = objects.AbuseIpDbV2(api_key=objects.api_key)
+pass
+
 # SMTP mailing initialization
 objects.notification_smtp_service = objects.smtplib.SMTP('smtp.gmail.com', 587)
 objects.notification_smtp_service.ehlo()

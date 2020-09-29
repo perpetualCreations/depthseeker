@@ -18,12 +18,14 @@ api.cfg contains the API key for AbuseIPDB. This can be left empty to disable.
 ## Dependencies
 Please install all dependencies specified under the requirements.txt file, through PIP.
 
+AbuseIPDB's PyPi distribution has not been updated in 2 years (as of 2020), a wheel build from the latest commit is available under abuseipdb-dist.
+
 ## Crontab
 Create a cronjob, schedule it to run the main module at 11:59 PM UTC+0, as Apache will clear the access log at 12:00 AM UTC+0. 
 
 Example:
 ```
-59 23 * * 0-6 python /home/admin/depthseeker/main.py >/dev/null 2>&1
+59 23 * * 0-6 python3 /home/admin/depthseeker/main.py >/dev/null 2>&1
 ```
 
 You may choose to select a custom time to run the main module, however please keep in mind that the access log for that day may not be compelete.

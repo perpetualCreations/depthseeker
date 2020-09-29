@@ -8,6 +8,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from platform import system
 import basics
+from abuseipdb import AbuseIpDbV2
 
 log_platform = None # name of host platform, overwritten by __init__
 
@@ -20,3 +21,9 @@ notification_host_password = None # password for address which notifications are
 notification_mailing_list = [] # list of recipient address(es) for notifications to be dispatched to, appended to by __init__
 
 notification_smtp_service = None # SMTP object, overwritten by __init__
+
+api_allow = None # boolean as signal to not interface with AbuseIPDB, overwritten by __init__
+
+api_key = None # API key for AbuseIPDB, overwritten by __init__
+
+api_interface = None # AbuseIPDB API object, overwritten by __init__

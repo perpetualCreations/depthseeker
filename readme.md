@@ -1,3 +1,4 @@
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com)
 # Depthseeker
 Configurable report service for Apache that reads access logs, and highlights malicious activity.
 Intended to be ran alongside Apache modules evasive and security.

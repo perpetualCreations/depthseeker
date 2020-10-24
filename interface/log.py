@@ -8,7 +8,7 @@ from interface import objects
 def collect():
     """
     Collects access log entries for the day.
-    :return: string
+    :return: multiline string
     """
     with open(objects.log_platform) as log_read:
         return log_read.read()

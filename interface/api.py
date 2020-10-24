@@ -8,9 +8,10 @@ def check(address):
     """
     Checks address for reports through AbuseIPDB API, formats returning JSON automatically.
     :param address: address for check.
-    :return: integer being the number of reports in the last 28 days.
+    :return: list with number of reports, abuse confidence score, and time last reported as a timestamp string formatted YYYY-MM-DDTHH:MM:SS+00:00.
     """
-    objects.api_inteface.check(ip_address = address, max_age_in_days = 28)
+    result = objects.api_inteface.check(ip_address = address, max_age_in_days = 182)
+    return [result["totalReports"], result["abuseConfidenceScore"]]
 pass
 
 def report(address, category, comments):

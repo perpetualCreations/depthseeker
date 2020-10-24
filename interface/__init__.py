@@ -40,6 +40,8 @@ objects.notification_smtp_service.ehlo()
 objects.notification_smtp_service.starttls()
 objects.notification_smtp_service.login(objects.notification_host_email_no_domain, objects.notification_host_password)
 
+mailing_list_loop = None
+
 with open("mail-to.list") as mailing_list_read:
     while mailing_list_loop != "### DO NOT DELETE LINE TERMINATOR ###":
         mailing_list_line = 8

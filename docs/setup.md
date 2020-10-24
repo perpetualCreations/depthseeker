@@ -20,6 +20,11 @@ Please install all dependencies specified under the requirements.txt file, throu
 
 AbuseIPDB's PyPi distribution has not been updated in 2 years (as of 2020), a wheel build from the latest commit is available under abuseipdb-dist.
 
+## Host Email
+If you're running email notification, the host email address must have "allow less secure apps" on. Otherwise, logins will not work.
+
+Is this the most secure account configuration? No, which is why you should use a separate email you don't mind losing.
+
 ## Crontab
 Create a cronjob, schedule it to run the main module at 11:59 PM UTC+0, as Apache will clear the access log at 12:00 AM UTC+0. 
 

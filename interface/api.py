@@ -1,8 +1,9 @@
 """
+API module, in interface module.
 Interfacing with AbuseIPDB API.
 """
 
-from interface import objects
+from interface import objects, friendlyfire
 
 def check(address):
     """
@@ -17,10 +18,15 @@ pass
 def report(address, category, comments):
     """
     Wrapper function merely for completeness, reports address through AbuseIPDB API.
+    Will not report local addresses, for obvious reasons.
     :param address: address to report.
     :param category: category report is under, as a list.
     :param comments: additional report comments.
     :return: none.
     """
-    objects.api_interface.report(ip_address = address, categories = category, comment = comments)
+    if objects.IP(address).iptype() != "PRIVATE" and friendlyfire.check(address) == False:
+        objects.api_interface.report(ip_address = address, categories = category, comment = comments)
+    else:
+        return None
+    pass
 pass

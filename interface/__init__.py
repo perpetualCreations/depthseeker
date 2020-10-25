@@ -2,7 +2,7 @@
 Initiation for interface module.
 """
 
-from interface import log, notification, objects
+from interface import log, notification, objects, friendlyfire, api
 
 # configuration parsing
 config_parser_read = objects.configparser.ConfigParser()
@@ -31,7 +31,7 @@ if objects.api_key == "":
 else:
     objects.api_allow = True
     # AbuseIPDB API initiation
-    objects.api_interface = objects.AbuseIpDbV2(api_key=objects.api_key)
+    objects.api_interface = objects.AbuseIpDbV2(api_key = objects.api_key)
 pass
 
 # SMTP mailing initialization
@@ -51,8 +51,21 @@ with open("mail-to.list") as mailing_list_read:
     pass
 pass
 
+# check if notification mailing list is empty, if so disable notifications
 if not objects.notification_mailing_list:
     objects.notification_allow = False
 else:
     objects.notification_allow = True
+pass
+
+safe_list_loop = None
+
+# friendlyfire initialization
+with open("safe.list") as safe_list_read:
+    while safe_list_loop != "### DO NOT DELETE LINE TERMINATOR ###":
+        safe_list_line = 8
+        safe_list_loop = safe_list_read.readline(safe_list_line)
+        objects.safe_list.append(safe_list_loop)
+        safe_list_line += 1
+    pass
 pass

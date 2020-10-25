@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<!--
+Depthseeker
+https://github.com/perpetualCreations/depthseeker/
+
+trigger-words-ptsd.xml
+Contains HTTP request keywords that show up in different types of attacks.
+
+User-configurable, please refer to https://www.abuseipdb.com/categories detailing each category.
+-->
+
+<root>
+    <DNSCompromise>
+
+    </DNSCompromise>
+    <DNSPoisoning>
+
+    </DNSPoisoning>
+    <fraudOrders>
+
+    </fraudOrders>
+    <DDoSAttack>
+
+    </DDoSAttack>
+    <FTPBruteForce>
+        <!-- Depthseeker does not monitor FTP, and it probably won't, you should be using SFTP! -->
+    </FTPBruteForce>
+    <pingOfDeath>
+        <!-- Depthseeker does not monitor ICMP (yet), leave this empty -->
+    </pingOfDeath>
+    <phishing>
+
+    </phishing>
+    <fraudVoIP>
+
+    </fraudVoIP>
+    <openProxy>
+
+    </openProxy>
+    <webSpam>
+
+    </webSpam>
+    <emailSpam>
+
+    </emailSpam>
+    <blogSpam>
+
+    </blogSpam>
+    <VPNIP>
+
+    </VPNIP>
+    <portScan>
+        <!-- Depthseeker does not monitor TCP/UDP port scans (yet), leave this empty -->
+    </portScan>
+    <hacking>
+
+    </hacking>
+    <SQLInjection>
+
+    </SQLInjection>
+    <spoofing>
+
+    </spoofing>
+    <bruteForce>
+
+    </bruteForce>
+    <badWebBot>
+
+    </badWebBot>
+    <exploitedHost>
+
+    </exploitedHost>
+    <webAppAttack>
+        <!-- Extremely relevant for web-admins! Keywords for web-app attacks, including those against WordPress and Drupal -->
+        <!-- If you don't want an administrative host to be accidentally reported, please list the admin host in interface/safe.list -->
+        /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+        =die(@md5(HelloThinkCMF))
+        ?s=/Index/\\think\\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=md5&amp;vars[1][]=
+        ?s=index/\think\app/invokefunction&amp;amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=
+        admin
+        Admin
+        wp-login
+        wp-plugins
+        ?XDEBUG_SESSION_START
+        manager
+        ZmEu
+        DFind
+        w00tw00t
+        setup
+    </webAppAttack>
+    <SSH>
+        <!-- Depthseeker does not monitor failed SSH logins (yet), leave this empty -->
+    </SSH>
+    <IoTTargeted>
+        <!-- Uncomment below if Depthseeker is running on an IoT device -->
+        <!-- IoTDeviceTriggerAll -->
+        <IoTComments>
+            <!-- Detail information about your IoT device below in a one-line string, if applicable, this will be shared in the AbuseIPDB report -->
+        </IoTComments>
+    </IoTTargeted>
+</root>

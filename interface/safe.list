@@ -1,0 +1,9 @@
+####### DO NOT DELETE READ ME #######
+This is the safe.list configuration file.
+Please add IP addresses of safe hosts, to avoid falsely reporting admin requests.
+Put each address on a new line, and make sure there is one address per line and only one address per line.
+This also means no empty lines.
+If left empty, no notifications will be dispatched, and instead will only be logged.
+####### DO NOT DELETE READ ME #######
+127.0.0.1
+### DO NOT DELETE LINE TERMINATOR ###
